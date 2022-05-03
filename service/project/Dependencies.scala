@@ -12,15 +12,15 @@ object Dependencies {
 
   private lazy val akkaHttpVersion = "10.2.9"
   private lazy val akkaVersion = "2.6.19"
-  private lazy val scaldiVersion = "0.5.8"
   private lazy val akkaHttpCorsVersion = "1.1.3"
   private lazy val json4sVersion = "4.0.5"
   private lazy val slickVersion: String = "3.3.3"
   private lazy val postgresVersion: String = "42.3.4"
   private lazy val scalamockVersion: String = "5.2.0"
   private lazy val scalatestVersion: String = "3.2.11"
-  private lazy val scalaMockitoVersion = "1.17.5"
   private lazy val logbackVersion: String = "1.2.11"
+  private lazy val catsCoreVersion = "2.7.0"
+  private lazy val scaldiVersion = "0.6.2"
 
   val akkaDependencies: Seq[ModuleID] = Seq(
     "com.typesafe.akka" %% "akka-http" % akkaHttpVersion,
@@ -29,7 +29,7 @@ object Dependencies {
     "com.typesafe.akka" %% "akka-testkit" % akkaVersion % Test,
     "com.typesafe.akka" %% "akka-stream-testkit" % akkaVersion % Test,
     "com.typesafe.akka" %% "akka-http-testkit" % akkaHttpVersion % Test,
-    "org.scaldi" %% "scaldi-akka" % scaldiVersion
+    "org.scaldi" %% "scaldi" % scaldiVersion
   )
 
   val routeDependencies: Seq[ModuleID] = Seq(
@@ -54,12 +54,11 @@ object Dependencies {
   val testDependencies: Seq[ModuleID] = Seq(
     "org.scalamock" %% "scalamock" % scalamockVersion % "test",
     "org.scalatest" %% "scalatest" % scalatestVersion % "test",
-    "org.mockito" %% "mockito-scala" % scalaMockitoVersion
   )
 
   val logbackDependencies: Seq[ModuleID] = Seq(
     "ch.qos.logback" % "logback-core" % logbackVersion,
-    "ch.qos.logback" % "logback-classic" % logbackVersion
+    "ch.qos.logback" % "logback-classic" % logbackVersion,
   )
 }
 
