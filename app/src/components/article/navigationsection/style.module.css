@@ -1,0 +1,12 @@
+.navigationContainer{
+    width: 20%;
+}
+
+.navigationList {
+    text-align: left;
+    list-style: none;
+}
+
+.navigationListItem {
+    padding-top: 8px;
+}

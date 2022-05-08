@@ -1,0 +1,22 @@
+.headerContainer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.searchInput {
+    background: transparent;
+    margin: 0;
+    padding: 7px 8px;
+    font-size: 14px;
+    color: inherit;
+    border: 1px solid transparent;
+    border-radius: inherit;
+
+}
+
+.searchInput:focus {
+    box-shadow: 0 0 3px 0 #1183d6;
+    border-color: #1183d6;
+    outline: none;
+}
