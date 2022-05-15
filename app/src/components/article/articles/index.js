@@ -2,14 +2,17 @@ import React from 'react';
 import styles from './style.module.css';
 import Section from "./section";
 
-function Articles({articles}) {
 
+function Articles({sections, isLoaded}) {
+    console.log(sections)
     return (
         <article className={styles.articleParagraphs}>
-            {
-                articles.map(article => {
-                    return (<Section title={article.title} paragraph={article.paragraph}/>)
-                })
+            {isLoaded ?
+                    sections.map(section => {
+                        return (<Section title={section.title} paragraph={section.content}/>)
+                    })
+                :
+                <></>
             }
         </article>
     );

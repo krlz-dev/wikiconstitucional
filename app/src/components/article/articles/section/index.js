@@ -3,9 +3,9 @@ import styles from './style.module.css';
 
 function Section ({title, paragraph}) {
     return(
-        <section>
+        <section className={styles.section}>
             <h2 className={styles.paragraphTitle}>{title}</h2>
-            <p className={styles.paragraph}>{paragraph}</p>
+            <p className={styles.paragraph} dangerouslySetInnerHTML={{ __html: paragraph }} ></p>
         </section>
     )
 }
