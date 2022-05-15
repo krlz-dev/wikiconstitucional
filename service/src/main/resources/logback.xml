@@ -1,0 +1,23 @@
+<configuration>
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <!--            <pattern>%d{HH:mm:ss.SSS} %-5level %logger - %msg%n</pattern>-->
+            <pattern>%d{HH:mm:ss.SSS} %-5level %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="ASYNC" class="ch.qos.logback.classic.AsyncAppender">
+        <queueSize>8192</queueSize>
+        <neverBlock>true</neverBlock>
+        <appender-ref ref="STDOUT"/>
+    </appender>
+
+    <logger name="com.zaxxer.hikari" level="error"/>
+    <logger name="akka.event.slf4j.Slf4jLogger" level="error"/>
+    <logger name="ch.qos.logback.classic.LoggerContext[default]" level="error"/>
+    <logger name="akka.remote.Remoting" level="info"/>
+
+    <root level="info">
+        <appender-ref ref="ASYNC"/>
+    </root>
+</configuration>
