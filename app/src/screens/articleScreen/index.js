@@ -1,5 +1,5 @@
 import React from "react";
-import Header from "../../components/header";
+import HeaderComponent from "../../components/header";
 import Article from "../../components/article";
 import {useParams} from 'react-router-dom';
 import {useGetArticle} from "../../api";
@@ -10,7 +10,7 @@ function ArticleScreen() {
     const {data, isLoaded} = useGetArticle();
     return (
         <>
-            <Header/>
+            <HeaderComponent/>
             <Article articleData={data} isLoaded={isLoaded} />
         </>
     )
