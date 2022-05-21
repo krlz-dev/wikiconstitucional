@@ -11,8 +11,7 @@ object DockerImage {
     dockerBaseImage := "openjdk:11",
     Docker / defaultLinuxInstallLocation := "/opt/" + name.value,
     dockerUpdateLatest := true,
-    dockerRepository := Some("valravnx"),
-    dockerUsername := Some("valravnx"),
+    dockerRepository := Some("registry.heroku.com/econstitucional-service/web"),
     Docker / version := {
       if (isSnapshot.value) s"${version.value}-$timestamp" else version.value
     },
