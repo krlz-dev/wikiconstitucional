@@ -1,0 +1,35 @@
+version: "3"
+services:
+ 
+  database:
+    container_name: database
+    image: valravnx/econstitucional
+    ports:
+      - "6432:5432"
+
+  pgAdmin:
+    container_name: pgAdmin
+    depends_on:
+      - database
+    image: dpage/pgadmin4
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=admin@admin.com
+      - PGADMIN_DEFAULT_PASSWORD=admin
+    ports:
+      - "8080:80"
+
+  app:
+    container_name: app
+    image: registry.heroku.com/econstitucional-app/web:latest
+    environment:
+      - PORT=3001
+    ports:
+      - "3001:3001"
+
+  service:
+    container_name: service
+    image: registry.heroku.com/econstitucional-service/web:latest
+
+networks:
+  default:
+    driver: bridge
