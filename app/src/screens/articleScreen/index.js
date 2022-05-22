@@ -1,17 +1,16 @@
 import React from "react";
 import HeaderComponent from "../../components/header";
 import Article from "../../components/article";
-import {useParams} from 'react-router-dom';
 import {useGetArticle} from "../../api";
+import {useParams} from "react-router-dom";
 
 function ArticleScreen() {
     const {articleId} = useParams()
-    console.log(articleId)
-    const {data, isLoaded} = useGetArticle();
+    const {data, isLoaded} = useGetArticle(articleId);
     return (
         <>
             <HeaderComponent/>
-            <Article articleData={data} isLoaded={isLoaded} />
+            <Article articleData={data} isLoaded={isLoaded}/>
         </>
     )
 }

@@ -1,6 +1,6 @@
 import {useFetchDataHook} from "./useFetchDataHook";
 
-export const useGetArticle = () => {
-   const {data, isLoaded} = useFetchDataHook('https://mocki.io/v1/e62fc0ce-a39c-448d-86ab-ed004f98885c');
+export const useGetArticle = (articleId) => {
+   const {data, isLoaded} = useFetchDataHook(`https://econstitucional-service.herokuapp.com/article/${articleId}`);
    return {data, isLoaded};
 }

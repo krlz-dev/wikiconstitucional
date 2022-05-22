@@ -4,12 +4,11 @@ import Section from "./section";
 
 
 function Articles({sections, isLoaded}) {
-    console.log(sections)
     return (
         <article className={styles.articleParagraphs}>
             {isLoaded ?
-                    sections.map(section => {
-                        return (<Section title={section.title} paragraph={section.content}/>)
+                    sections.map((section, index) => {
+                        return (<Section key={index} title={section.title} paragraph={section.content}/>)
                     })
                 :
                 <></>

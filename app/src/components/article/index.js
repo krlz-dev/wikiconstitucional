@@ -9,7 +9,7 @@ function Article({articleData, isLoaded}) {
             <div className={styles.titleArticleContainer}>
                 <h1 className={styles.articleTitle}>{articleData.title}</h1>
                 <hr className={styles.titleHr}/>
-                <p className={styles.articleShortDescription}>{articleData.content}</p>
+                <p className={styles.articleShortDescription} dangerouslySetInnerHTML={{ __html: articleData.content }} />
             </div>
             <div className={styles.articlesNavContainer}>
                 <Articles sections={articleData.sections} isLoaded={isLoaded}/>
