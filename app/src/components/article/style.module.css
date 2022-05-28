@@ -1,10 +1,11 @@
 .articleContainer {
     margin: 50px auto;
     width: 80%;
+    max-width: 1020px;
 }
 
 .articlesNavContainer {
-    padding-top: 80px;
+    margin-top: var(--section-margin-top);
     display: flex;
 }
 
@@ -12,6 +13,40 @@
     margin: 0 auto;
     width: 50%;
     text-align: center;
+}
+
+.articleShortDescription {
+    color: #6D6D6D;
+    line-height: 17px;
+    text-align: left;
+}
+
+.articleShortDescriptionContainer {
+    margin-top: var(--section-margin-top);
+    position: relative;
+}
+
+.articleShortDescription:before {
+    content: '';
+    position: absolute;
+    left: -100px;
+    top: 25%;
+    width: 80px;
+    height: 11px;
+    background: var(--secondary-color);
+}
+
+.articleDescriptionContainer {
+    border-left: 8px solid var(--secondary-color);
+}
+
+.articleDescription {
+    padding: 0 40px;
+    color: #000000;
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 300;
+    text-align: left;
 }
 
 .articleTitle {
@@ -22,7 +57,7 @@
     line-height: 19px;
 }
 
-.articleShortDescription {
+.articleContent {
     font-family: 'sans-serif';
     font-style: italic;
     font-weight: 300;

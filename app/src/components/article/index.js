@@ -9,12 +9,25 @@ function Article({articleData, isLoaded}) {
             <div className={styles.titleArticleContainer}>
                 <h1 className={styles.articleTitle}>{articleData.title}</h1>
                 <hr className={styles.titleHr}/>
-                <p className={styles.articleShortDescription} dangerouslySetInnerHTML={{ __html: articleData.content }} />
+                <p className={styles.articleContent} dangerouslySetInnerHTML={{__html: articleData.content}}/>
+            </div>
+            <div className={styles.articleShortDescriptionContainer}>
+                <p className={styles.articleShortDescription}
+                   dangerouslySetInnerHTML={{__html: articleData.presentation}}/>
             </div>
             <div className={styles.articlesNavContainer}>
-                <Articles sections={articleData.sections} isLoaded={isLoaded}/>
+                <div>
+                    <div className={styles.articleDescriptionContainer}>
+                        <p className={styles.articleDescription}
+                           dangerouslySetInnerHTML={{__html: articleData.description}}/>
+                    </div>
+                    <Articles sections={articleData.sections} isLoaded={isLoaded}/>
+                </div>
                 <hr className={styles.separation}/>
-                <Navigationsection/>
+                <div>
+                    <Navigationsection/>
+                </div>
+
             </div>
         </div>
     )
